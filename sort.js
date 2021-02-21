@@ -15,6 +15,7 @@ function bubbleSort (arr) {
   while (!sorted) {
     sorted = true
     for (let i = 0; i < arr.length - 1; i++) {
+      // bubble: 每次冒泡都移动位置不对的元素
       if (arr[i + 1] < arr[i]) {
         let temp = arr[i]
         arr[i] = arr[i + 1]
@@ -32,7 +33,7 @@ function selectionSort (arr) {
     let minIndex = i;
     let minValue = arr[i]
     for(let j = i + 1; j < arr.length - 1; j++) {
-      // 二次循环找到最小的元素
+      // selection: 二次循环找到最小的元素, 和最前面的元素交换位置
       if (arr[j] < minValue) {
         minIndex = j
         minValue = arr[j]
@@ -47,7 +48,25 @@ function selectionSort (arr) {
 
 // 插入排序
 function insertionSort (arr) {
-
+  for(let i = 1; i < arr.length - 1; i++) {
+    for(let j = 0; j < i; j++) {
+      // insertion：把当前元素插入到合适的位置
+      if (arr[j] > arr[i]) {
+        // 如果找到比当前元素大的值，则把该元素插到前面来
+        let temp = arr[i]
+        let temp2 = undefined
+        arr[i] = arr[j]
+        // 后面的元素要往后顺延一个位置
+        for(let k = j + 1; k <= i; k++) {
+          temp2 = arr[k]
+          arr[k] = temp
+          temp = temp2
+        }
+        break;
+      }
+    }
+  }
+  return arr
 }
 
 /**
@@ -60,9 +79,10 @@ function test () {
     testData.push(Math.floor(Math.random() * 100))
   } 
   console.log('before sort', testData)
-  console.log('------------')
+  console.log('-----------------------')
   console.log('bubble sort', bubbleSort(testData))
   console.log('selection sort', selectionSort(testData))
+  console.log('insertion sort', insertionSort(testData))
 }
 
 test()
