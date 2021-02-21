@@ -7,7 +7,7 @@
 
 
 //  冒泡排序
-function bubbleSort (arr: number[]) {
+function bubbleSort (arr) {
   let sorted = false  // 是否排序完成的标志符
   if (arr.length < 2) {
     return arr
@@ -26,6 +26,30 @@ function bubbleSort (arr: number[]) {
   return arr
 }
 
+// 选择排序
+function selectionSort (arr) {
+  for(let i = 0; i < arr.length - 1; i++) {
+    let minIndex = i;
+    let minValue = arr[i]
+    for(let j = i + 1; j < arr.length - 1; j++) {
+      // 二次循环找到最小的元素
+      if (arr[j] < minValue) {
+        minIndex = j
+        minValue = arr[j]
+      }
+    }
+    let temp = arr[i]
+    arr[i] = arr[minIndex]
+    arr[minIndex] = temp
+  }
+  return arr
+}
+
+// 插入排序
+function insertionSort (arr) {
+
+}
+
 /**
  * 生成长度为100的随机数组
  *  */ 
@@ -38,6 +62,7 @@ function test () {
   console.log('before sort', testData)
   console.log('------------')
   console.log('bubble sort', bubbleSort(testData))
+  console.log('selection sort', selectionSort(testData))
 }
 
 test()
