@@ -32,7 +32,7 @@ function selectionSort (arr) {
   for(let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
     let minValue = arr[i]
-    for(let j = i + 1; j < arr.length - 1; j++) {
+    for(let j = i + 1; j < arr.length; j++) {
       // selection: 二次循环找到最小的元素, 和最前面的元素交换位置
       if (arr[j] < minValue) {
         minIndex = j
@@ -48,7 +48,7 @@ function selectionSort (arr) {
 
 // 插入排序
 function insertionSort (arr) {
-  for(let i = 1; i < arr.length - 1; i++) {
+  for(let i = 1; i < arr.length; i++) {
     for(let j = 0; j < i; j++) {
       // insertion：把当前元素插入到合适的位置
       if (arr[j] > arr[i]) {
