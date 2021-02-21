@@ -7,7 +7,7 @@
 
 
 //  冒泡排序
-function bubbleSort (arr) {
+function bubbleSort (arr: number[]) {
   let sorted = false  // 是否排序完成的标志符
   if (arr.length < 2) {
     return arr
@@ -26,6 +26,9 @@ function bubbleSort (arr) {
   return arr
 }
 
+/**
+ * 生成长度为100的随机数组
+ *  */ 
 function test () {
   const length = 100
   let testData = []

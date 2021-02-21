@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cauzinc/arithmetic/issues"
   },
-  "homepage": "https://github.com/cauzinc/arithmetic#readme"
+  "homepage": "https://github.com/cauzinc/arithmetic#readme",
+  "dependencies": {
+    "typescript": "^4.1.5"
+  }
 }
