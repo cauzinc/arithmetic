@@ -35,7 +35,7 @@ function makeHeap (arr, end) {
  * 堆排序
  * @param arr number[]
  */
-export function heapSort (arr) {
+export default function heapSort (arr) {
   let heap = makeHeap(arr, arr.length)
   for(let i = heap.length; i > 0; i--) {
     // 因为堆总是最大的值在上面，所以交换首位位置，即可把最大的值放到队尾
@@ -72,4 +72,4 @@ function test () {
 }
 
 // makeHeapTest()
-test()
+// test()
