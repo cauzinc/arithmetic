@@ -1,10 +1,18 @@
 // import 'should'
-import heapSort from '../src/sort/heapSort';
+import heapSort from '../src/sort/heapSort.js';
+import { bubbleSort } from '../src/sort/sort.js';
+
+function generateArr(len = 20) {
+  const arr = [];
+  for (let i = 0; i < len; i++) {
+    arr.push(Math.floor(Math.random() * 100));
+  }
+  return arr;
+}
 
 describe('heap sort test', () => {
-  const randomArr = [3, 11, 20, 15, 6, 8, 12];
-  it('return sorted arr', () => {
-    heapSort(randomArr).should.be.eql([3, 6, 8, 11, 12, 15, 20]);
-    // test().should.be.eql('hello mocha')
+  const randomArr = generateArr();
+  it('堆排序', () => {
+    heapSort(randomArr).should.be.eql(bubbleSort(randomArr));
   });
 });
