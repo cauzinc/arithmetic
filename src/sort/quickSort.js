@@ -13,7 +13,7 @@
   * 3. 直到左右指针重合，重合的位置就是基准数的位置
   * 4. 以这个重合位置index为界，然后左右两边递归执行该算法，直到数组排序完成
   */
-export function quickSort(arr, l, r) {
+export default function quickSort(arr, l, r) {
   if (l < r) {
     const mid = arr[l];
     let i = l;

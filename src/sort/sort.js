@@ -71,7 +71,7 @@ function insertionSort(arr) {
 /**
  * 生成长度为100的随机数组
  *  */
-function test() {
+export function test() {
   const length = 100;
   const testData = [];
   for (let i = 0; i < length; i++) {
@@ -84,4 +84,4 @@ function test() {
   console.log('insertion sort', insertionSort(testData));
 }
 
-test();
+// test();

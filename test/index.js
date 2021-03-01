@@ -1,5 +1,6 @@
 // import 'should'
 import heapSort from '../src/sort/heapSort.js';
+import quickSort from '../src/sort/quickSort.js';
 import { bubbleSort } from '../src/sort/sort.js';
 
 function generateArr(len = 20) {
@@ -11,8 +12,12 @@ function generateArr(len = 20) {
 }
 
 describe('heap sort test', () => {
-  const randomArr = generateArr();
   it('堆排序', () => {
+    const randomArr = generateArr();
     heapSort(randomArr).should.be.eql(bubbleSort(randomArr));
+  });
+  it('快速排序', () => {
+    const randomArr = generateArr();
+    quickSort(randomArr).should.be.eql(bubbleSort(randomArr));
   });
 });
