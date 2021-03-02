@@ -12,6 +12,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    semi: 0,
+    'consistent-return': 0,
     'no-plusplus': 0,
     'import/prefer-default-export': 0,
     'no-console': 0,

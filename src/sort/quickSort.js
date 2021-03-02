@@ -35,7 +35,7 @@ export default function quickSort(arr, l, r) {
   return arr;
 }
 
-function test() {
+export function test() {
   const testData = [];
   const length = 21;
   for (let i = 0; i < length; i++) {
@@ -46,4 +46,4 @@ function test() {
   console.log(quickSort(testData, 0, testData.length - 1));
 }
 
-test();
+// test();
