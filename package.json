@@ -4,7 +4,8 @@
   "description": "",
   "main": "reverseNode.js",
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/.bin/_mocha --require should"
+    "mocha": "NODE_ENV=test ./node_modules/.bin/_mocha --require should",
+    "test": "jest /test/.*.test.js?$ --config jest.config.mjs"
   },
   "type": "module",
   "repository": {

@@ -13,6 +13,7 @@ module.exports = {
   },
   rules: {
     semi: 0,
+    'max-len': 0,
     'consistent-return': 0,
     'no-plusplus': 0,
     'import/prefer-default-export': 0,

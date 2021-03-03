@@ -27,6 +27,7 @@ describe('sort test', () => {
     console.log('------------------------');
     console.log(mergeSort(randomArr));
     console.log(bubbleSort(randomArr));
-    mergeSort(randomArr).should.be.eql(bubbleSort(randomArr));
+    mergeSort(randomArr).should.containEql(bubbleSort(randomArr));
+    // expect(mergeSort(randomArr)).toContainEqual(bubbleSort(randomArr))
   });
 });
