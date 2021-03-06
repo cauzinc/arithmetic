@@ -23,11 +23,11 @@ describe('sort test', () => {
   });
   it('快速排序', () => {
     const randomArr = generateArr();
-    console.log('before', randomArr);
-    console.log('------------------------');
-    console.log(mergeSort(randomArr));
-    console.log(bubbleSort(randomArr));
-    mergeSort(randomArr).should.containEql(bubbleSort(randomArr));
+    // console.log('before', randomArr);
+    // console.log('------------------------');
+    // console.log(bubbleSort(randomArr));
+    // console.log(mergeSort(randomArr, 0, randomArr.length - 1));
+    mergeSort(randomArr, 0, randomArr.length - 1).should.be.eql(bubbleSort(randomArr));
     // expect(mergeSort(randomArr)).toContainEqual(bubbleSort(randomArr))
   });
 });

@@ -8,22 +8,45 @@
  */
 export default function mergeSort(arr, l, r) {
   if (l === r) {
-    return arr
+    return [arr[l]]
   }
   const result = []
-  const mid = Math.floor(arr.length / 2)
+  const mid = Math.floor((r + l - 1) / 2)
   const left = mergeSort(arr, l, mid)
-  const right = mergeSort(arr, mid, r)
+  const right = mergeSort(arr, mid + 1, r)
   let i = 0
   let j = 0
   while (i < left.length || j < right.length) {
-    if (i >= left.length || left[i] > right[j]) {
+    if (i >= left.length || left[i] >= right[j]) {
       result.push(right[j]);
       j++;
-    } else if (j >= right.length || left[i] < right[j]) {
+    } else if (j >= right.length || left[i] <= right[j]) {
       result.push(left[i]);
       i++;
     }
+    // console.log('?', l, r, mid)
+    // console.log('arr', left, right, arr)
+    // console.log('i, l', i, j)
   }
   return result
 }
+
+function generateArr(len = 20) {
+  const arr = [];
+  for (let i = 0; i < len; i++) {
+    arr.push(Math.floor(Math.random() * 100));
+  }
+  return arr;
+}
+
+function test () {
+  // let arr = generateArr()
+  let arr = [
+    45, 74, 64, 25, 80, 34, 15,
+    11, 40, 35, 92, 63, 82, 90,
+     3, 72, 40, 28, 57,  9]
+  console.log('before', arr)
+  console.log(mergeSort(arr, 0, arr.length - 1))
+}
+
+test()
