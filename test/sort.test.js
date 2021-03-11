@@ -21,7 +21,7 @@ describe('sort test', () => {
     const randomArr = generateArr();
     quickSort(randomArr).should.be.eql(bubbleSort(randomArr));
   });
-  it('快速排序', () => {
+  it('合并排序', () => {
     const randomArr = generateArr();
     // console.log('before', randomArr);
     // console.log('------------------------');

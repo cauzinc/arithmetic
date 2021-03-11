@@ -24,9 +24,6 @@ export default function mergeSort(arr, l, r) {
       result.push(left[i]);
       i++;
     }
-    // console.log('?', l, r, mid)
-    // console.log('arr', left, right, arr)
-    // console.log('i, l', i, j)
   }
   return result
 }
