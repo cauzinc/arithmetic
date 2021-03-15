@@ -7,6 +7,14 @@
  * @returns {number 炒股获得的利润}
  */
 
+/**
+ * 我们只要知道这个股票所有上涨的利润，就是这个股票的总利润
+ * 假设一支股票连续上涨，每天的价格是 a b c d，那么利润就是 （b - a）+ (c - b) + (d - c) = d - a
+ * 所以我们只要用后一天的价格减去前一天的价格，只要是是上涨的，就是我们的股票利润
+ * [7, 1, 5, 3, 6, 4]
+ * [-6, 4, -2, 3, -2]
+ * 可以得出利润为7
+ * */
 export default function maxProfit(prices) {
   let profit = 0
   for (let i = 0; i < prices.length - 1; i++) {
@@ -19,6 +27,7 @@ export default function maxProfit(prices) {
 const cases = [
   { params: [7, 1, 5, 3, 6, 4], answer: 7 },
   { params: [7, 6, 4, 3, 1], answer: 0 },
+  { params: [1, 2, 3, 4, 5], answer: 4 },
 ]
 
 function test() {
