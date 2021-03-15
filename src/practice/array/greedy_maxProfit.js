@@ -8,5 +8,23 @@
  */
 
 export default function maxProfit(prices) {
-
+  let profit = 0
+  for (let i = 0; i < prices.length - 1; i++) {
+    const balance = prices[i + 1] - prices[i]
+    if (balance > 0) profit += balance
+  }
+  return profit
 }
+
+const cases = [
+  { params: [7, 1, 5, 3, 6, 4], answer: 7 },
+  { params: [7, 6, 4, 3, 1], answer: 0 },
+]
+
+function test() {
+  cases.forEach((i) => {
+    console.log(maxProfit(i.params), i.answer)
+  })
+}
+
+test()
