@@ -74,6 +74,20 @@ export function rotateV3(nums, k) {
   return nums
 }
 
+/**
+ * 将前面的数字移动到数组后面，然后删除前面的元素
+ * 时间复杂度 O(k)
+ * 空间复杂度 O(n - k)
+ * */
+export function rotateV4(nums, k) {
+  const len = nums.length
+  const offset = k % len
+  for (let i = 0; i < len - offset; i++) {
+    nums.push(nums[i])
+  }
+  return nums.splice(0, len - offset)
+}
+
 const cases = [
   { params: [1, 2, 3, 4, 5, 6, 7], k: 3, answer: [5, 6, 7, 1, 2, 3, 4] },
   { params: [-1, -100, 3, 99], k: 2, answer: [3, 99, -1, -100] },
