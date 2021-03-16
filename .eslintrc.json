@@ -14,6 +14,10 @@
   },
   "rules": {
     "semi": 0,
+    "prefer-destructuring": ["error", {
+      "array": false,
+      "object": true
+    }],
     "max-len": 0,
     "consistent-return": 0,
     "no-plusplus": 0,
