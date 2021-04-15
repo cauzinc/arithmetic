@@ -41,7 +41,6 @@ const intersect = (nums1, nums2) => {
 
 function test() {
   cases.forEach((item, index) => {
-    // const len = removeDuplicatesV1(nums)
     const result = intersect(item.nums1, item.nums2)
     console.log(`running case ${index + 1}: ${result} - ${item}`)
     console.log('----------------------------')
